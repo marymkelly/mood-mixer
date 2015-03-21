@@ -102,7 +102,7 @@ svg{
 }
 
 .title{
-  margin-top: 37%;
+  margin-top: 34%;
 }
 
 .col-md-2{
@@ -144,6 +144,14 @@ svg{
 }
 
 #co{}
+
+#l, #m{}
+
+#n, #o, #p, #q{
+  display: none;
+}
+
+#emoticon, #landscape, #words, #colors{}
 </style>
 
   <html>
@@ -162,20 +170,25 @@ svg{
      <div class="col-md-5">
       <nav class="circular-menu">
        <div class="circle">
-      <a href="" class="fa fa-home fa-2x"></a>
-      <a href="" class="fa fa-facebook fa-2x"></a>
-      <a href="" class="fa fa-twitter fa-2x"></a>
-      <a href="" class="fa fa-linkedin fa-2x"></a>
-      <a href="" class="fa fa-github fa-2x"></a>
-      <a href="" class="fa fa-rss fa-2x"></a>
-      <a href="" class="fa fa-pinterest fa-2x"></a>
-      <a href="" class="fa fa-asterisk fa-2x"></a>
+      <a class="fa fa-home fa-2x" id="emoticon"></a>
+      <a class="fa fa-circle fa-1x"></a>
+      <a class="fa fa-twitter fa-2x" id="landscape"></a>
+      <a class="fa fa-circle fa-1x"></a>
+      <a class="fa fa-github fa-2x" id="words"></a>
+      <a class="fa fa-circle fa-1x"></a>
+      <a class="fa fa-pinterest fa-2x" id="colors"></a>
+      <a class="fa fa-circle fa-1x"></a>
       </div>
-      <a href='#' class="menu-button"></a>
+      <a class="menu-button"></a>
       </nav>
     </div>
     <div class="col-md-7">
       <div class="title" id="co"><h1> Moodologist </h1></div>
+      <div id="m"><h3> You thirsty brah? - Brosapham Lincoln </h3> </div>
+      <div id="n"><h3> Emoticon </h3> </div>
+      <div id="o"><h3> Landscape </h3> </div>
+      <div id="p"><h3> Word </h3> </div>
+      <div id="q"><h3> Color </h3> </div>
     </div>    
 
 
@@ -265,9 +278,57 @@ document.querySelector('.menu-button').onmouseover = function(e) {
   items[i].style.top = (50 + 35*Math.sin(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
 }
 
-$('.menu-button').click(function(){
+$('#emoticon').click(function(){
   $('.home').fadeOut('fast');
   $('.emoticon').show('slow');
+});
+
+$('#landscape').click(function(){
+  $('.home').fadeOut('fast');
+  $('.landscape').show(1000);
+});
+
+$('#words').click(function(){
+  $('.home').fadeOut('fast');
+  $('.words').show('slow');
+});
+
+$('#colors').click(function(){
+  $('.home').fadeOut('fast');
+  $('.colors').show('slow');
+});
+
+$('#emoticon').hover(function(){
+  $('#m').hide();
+  $('#n').show();
+}, function(){
+  $('#n').hide();
+  $('#m').show();
+});
+
+$('#landscape').hover(function(){
+  $('#m').hide();
+  $('#o').show();
+}, function(){
+  $('#o').hide();
+  $('#m').show();
+});
+
+$('#words').hover(function(){
+  $('#m').hide();
+  $('#p').show();
+}, function(){
+  $('#p').hide();
+  $('#m').show();
+});
+
+
+$('#colors').hover(function(){
+  $('#m').hide();
+  $('#q').show();
+}, function(){
+  $('#q').hide();
+  $('#m').show();
 });
 
 
@@ -275,15 +336,16 @@ $('.menu-button').click(function(){
 
 
 
+
 function fadeDivIn(){
-    $("#co").animate({'color': "#CCCCCC" }, 4000, function(){fadeDiv2();});
+    $("#co").animate({'color': "#5e1530" }, 4000, function(){fadeDiv2();});
 }
 function fadeDiv2(){
-    $("#co").animate({'color': "#333333" }, 4000, function(){fadeDiv3();});
+    $("#co").animate({'color': "#7fffd4" }, 4000, function(){fadeDiv3();});
 }
 
 function fadeDiv3(){
-    $("#co").animate({'color': "#f7f7f7" }, 4000, function(){fadeDiv4();});
+    $("#co").animate({'color': "#9f5f76" }, 4000, function(){fadeDiv4();});
 }
 
 function fadeDiv4(){

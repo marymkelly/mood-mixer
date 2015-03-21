@@ -6,7 +6,9 @@
 <style>
 
 body{
-  overflow-x: hidden; 
+  overflow-x: hidden;
+  overflow-y: hidden;
+
 }
 
 .test{
@@ -112,13 +114,43 @@ svg{
     transform: rotateX(360deg);
     -webkit-transform: rotateX(360deg);
 }
+
+.emoticon, .colors, .landscape, .words, .final{
+  display: none;
+}
+
+.home{}
+
+.sphere{
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+}
+
+.green{
+  background-color: #43e34d;
+}
+
+.blue{
+  background-color: #3399ff;
+}
+
+.red{
+  background-color: #ff3030;
+}
+
+.yellow{
+  background-color: #ff9900;
+}
+
+#co{}
 </style>
 
   <html>
   <body>
 
 <div class="wrapper">
-  <div class="container">
+  <div class="container home">
    <!-- <svg width="400" height="400">
     <path d="M20,200 L360,0 A180,180 0 0,1 20,200 z"
         style="fill:#707070;
@@ -139,11 +171,11 @@ svg{
       <a href="" class="fa fa-pinterest fa-2x"></a>
       <a href="" class="fa fa-asterisk fa-2x"></a>
       </div>
-      <a href="" class="menu-button"></a>
+      <a href='#' class="menu-button"></a>
       </nav>
     </div>
     <div class="col-md-7">
-      <div class="title"><h1> Moodologist </h1></div>
+      <div class="title" id="co"><h1> Moodologist </h1></div>
     </div>    
 
 
@@ -151,7 +183,7 @@ svg{
 
 
 
-  <div class="container" style="background-color:#e0d9fe">
+  <div class="container emoticon" style="background-color:#e0d9fe">
       <div class="row" style="padding-top:23%">
         <div class="col-md-2 col-md-offset-2" id="emoti" style="margin-left:20%"><img src="img/sad.png" width="60%"></div>
         <div class="col-md-2" id="emoti"><img src="img/giggly.png" alt="Smiley face" width="60%"></div>
@@ -161,7 +193,7 @@ svg{
       </div>
   </div>  
 
-  <div class="container" align="center" style="background-color:#ffb770; padding-top:8%">
+  <div class="container landscape" align="center" style="background-color:#ffb770; padding-top:8%">
     <h2 style="text-align:center;">Choose one of the following:</h2>
       <div class="row" style="margin-top:5%">
           <div class="col-md-2" style="margin-left:3%"><img src="img/lake.jpg" alt="Lake" height="40%" width="120%"></div>
@@ -173,30 +205,39 @@ svg{
 
   </div>
 
-  <div class="container">
-      <div class="row">
-        <div class="col-md-2 col-md-offset-2"><h1>Sexy</h1></div>
-        <div class="col-md-2"><h1>Wild</h1></div>
-        <div class="col-md-2"><h1>Sophisticated</h1></div>
-        <div class="col-md-2 col-md-offset-1"><h1>Spicy</h1></div>
+  <div class="container words" style="background-color:#fefee3">
+      <div class="row" style="padding:10%">
+        <div class="col-md-4 col-md-offset-2"><h1>Sexy</h1></div>
+        <div class="col-md-6"><h1>Wild</h1></div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 col-md-offset-1"><h1>Sophisticated</h1></div>
+          <div class="col-md-6"><h1 align="center">Spicy</h1></div>
         </div>
 
   </div>
 
-    <div class="container">
-    <h2 style="text-align:center"> Colors </h2>
-      <div class="row">
-        <div class="col-md-2 col-md-offset-2" style="background-color:blue; height:90%;"></div>
-        <div class="col-md-2" style="background-color:red; height:90%;"></div>
-        <div class="col-md-2" style="background-color:green; height:90%;"></div>
-        <div class="col-md-2" style="background-color:yellow; height:90%"></div>
+    <div class="container colors">
+      <div class="row" style="padding-left:8%; padding-top: 20%;">
+        <div class="col-md-3">
+          <div class="sphere green"></div>
+        </div>
+        <div class="col-md-3">
+          <div class="sphere blue"></div>
+        </div>
+        <div class="col-md-3">
+          <div class="sphere yellow"></div>
+        </div>
+        <div class="col-md-3">
+          <div class="sphere red"></div>
+        </div>
         </div>
       </div>
 
 
   </div>
 
-    <div class="container">
+    <div class="container final" style="background-color:#b8b5b5">
     <h2 style="text-align:center"> Final </h2>
 
 
@@ -207,12 +248,14 @@ svg{
 </div> 
 
 
-  </body>
+</body>
 
-
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
 <script type="text/javascript">
 
-document.querySelector('.menu-button').onclick = function(e) {
+document.querySelector('.menu-button').onmouseover = function(e) {
    e.preventDefault(); document.querySelector('.circle').classList.toggle('open');
 }
 
@@ -222,8 +265,40 @@ document.querySelector('.menu-button').onclick = function(e) {
   items[i].style.top = (50 + 35*Math.sin(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
 }
 
+$('.menu-button').click(function(){
+  $('.home').fadeOut('fast');
+  $('.emoticon').show('slow');
+});
+
+
+
+
+
+
+function fadeDivIn(){
+    $("#co").animate({'color': "#CCCCCC" }, 4000, function(){fadeDiv2();});
+}
+function fadeDiv2(){
+    $("#co").animate({'color': "#333333" }, 4000, function(){fadeDiv3();});
+}
+
+function fadeDiv3(){
+    $("#co").animate({'color': "#f7f7f7" }, 4000, function(){fadeDiv4();});
+}
+
+function fadeDiv4(){
+    $("#co").animate({'color': "#3de" }, 4000, function(){fadeDiv5();});
+}
+
+function fadeDiv5(){
+    $("#co").animate({'color': "#8C001A" }, 4000, function(){fadeDivIn();});
+}
+
+$(document).ready(function(){
+    fadeDivIn();
+})
+
 </script>
 
 
-
-  </html>
+ </html>

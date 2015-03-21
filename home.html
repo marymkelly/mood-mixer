@@ -1,6 +1,7 @@
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/home.css">
   <link href='http://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 
 <style>
 
@@ -16,42 +17,6 @@
 }
 
 
-a{
-  position:absolute;
-  left:0; top:0;
-  width:70%; height:30%;
-  overflow:hidden;
-  transform:scale(.5) translateZ(0px);
-  background:inherit;
-  z-index: -2;
-}
-
-a:nth-child(1){
-  left: 15%;
-  top: -20%;
-  border-radius:50% 50% 50% 50%;
-  transform-origin: 110% 110%;
-  transition:transform .4s .15s;
-  -ms-transform: rotate(-2deg); /* IE 9 */
-  -webkit-transform: rotate(-2deg); /* Chrome, Safari, Opera */
-  transform: rotate(-5deg);
-  background: #707070;
-  z-index: -1;
-}
-
-a:nth-child(2){
-  left: 70%;
-  top: 15%;
-  border-radius:50% 50% 50% 50%;
-  transform-origin: 110% 110%;
-  transition:transform .4s .15s;
-  -ms-transform: rotate(-2deg); /* IE 9 */
-  -webkit-transform: rotate(-2deg); /* Chrome, Safari, Opera */
-  transform: rotate(-5deg);
-  background: #707070;
-  z-index: -1;
-}
-
 .container{
   padding: 0%;
   margin: 0%;
@@ -60,65 +25,76 @@ a:nth-child(2){
 
 }
 
-
-
-
-/*div{
-  position:relative;
-  width:40%; height:80%;
-  margin:0 auto;
-  background:inherit;
-  transform:scale(0.2);
-  opacity:1;
-  transition:transform .5s, opacity .5s;
-}
-
-a{
-  position:absolute;
-  left:0; top:0;
-  width:47.5%; height:47.5%;
-  overflow:hidden;
-  transform:scale(.5) translateZ(0px);
-  background:#585247;
-}
-
-a:nth-child(1){
-  left: -22.5%;
-  border-radius:40vmin 0 0 0;
-  transform-origin: 110% 110%;
-  transition:transform .4s .15s;
-}
-a:nth-child(2){
-  border-radius:0 40vmin 0 0;
-  left:72.5%;
-  transform-origin: -10% 110%;
-  transition:transform .4s .2s;
-}
-a:nth-child(3){
-  border-radius:0 0 0 40vmin;
-  top:72.5%;
-  transform-origin: 110% -10%;
-  transition:transform .4s .25s;
-}
-a:nth-child(4){
-  border-radius:0 0 40vmin 0;
-  top:72.5%; left:72.5%;
-  transform-origin: -10% -10%;
-  transition:transform .4s .3s;
-}
-a:nth-child(5){
-  width:55%;height:55%;
-  left:22.5%; top:22.5%;
-  border-radius:50vmin;
-  box-shadow:0 0 0 5vmin white;
-  transform:scale(1);
-}
-*/
-
 svg{
   height: 100%;
   width: 100%;
 }
+
+.circular-menu {
+  width: 470px;
+  height: 450px;
+  margin: 50px auto 0;
+  position: relative;
+}
+
+.circle {
+  width: 450px;
+  height: 450px;
+  opacity: 0;
+ 
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -transform: scale(0);
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.open.circle {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -transform: scale(1);
+}
+
+.circle a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  height: 40px;
+  width: 40px;
+  line-height: 50px;
+  margin-left: -20px;
+  margin-top: -20px;
+  position: absolute;
+  text-align: center;
+}
+ 
+.circle a:hover {
+  color: #eef;
+}
+
+.menu-button {
+  position: absolute;
+  top: calc(50% - 50px);
+  left: calc(50% - 50px);
+  text-decoration: none;
+  text-align: center;
+  color: #444;
+  border-radius: 50%;
+  display: block;
+  height: 100px;
+  width: 100px;
+  line-height: 40px;
+  padding: 25px;
+  background: #dde;
+}
+
+
+.menu-button:hover {
+  background-color: #eef;
+}
+
 
 </style>
 
@@ -127,21 +103,41 @@ svg{
 
 <div class="wrapper">
   <div class="container">
-    <div class="col-lg-5" style="background-color:blue">
-    <svg width="400" height="400">
+    <div class="col-lg-5">
+   <!-- <svg width="400" height="400">
     <path d="M20,200 L360,0 A180,180 0 0,1 20,200 z"
         style="fill:#707070;
             fill-opacity: 1;
             stroke:#707070;
             stroke-width: 1"
         transform = "rotate(-60 320 400)"/>
-    </svg>
+    </svg>-->
+     
+      <nav class="circular-menu">
+       <div class="circle">
+      <a href="" class="fa fa-home fa-2x"></a>
+      <a href="" class="fa fa-facebook fa-2x"></a>
+      <a href="" class="fa fa-twitter fa-2x"></a>
+      <a href="" class="fa fa-linkedin fa-2x"></a>
+      <a href="" class="fa fa-github fa-2x"></a>
+      <a href="" class="fa fa-rss fa-2x"></a>
+      <a href="" class="fa fa-pinterest fa-2x"></a>
+      <a href="" class="fa fa-asterisk fa-2x"></a>
+      </div>
+
+
+      <a href="" class="menu-button fa fa-bars fa-2x"></a>
+      </nav>
+
+
+
+</div>  
+
+    
+
   </div>
   <div class="col-lg-7">
-      <!--<div class="test" style="margin-top:15%">-->
-        <!--<a href="#"></a>
-        <a href="#"></a>
-        <a href="#"></a>-->
+
         <h1> TEST </h1>
     </div>
   </div>
@@ -180,7 +176,22 @@ svg{
 
 
 </div> 
-
-
   </body>
+
+<script type="text/javascript">
+
+document.querySelector('.menu-button').onclick = function(e) {
+   e.preventDefault(); document.querySelector('.circle').classList.toggle('open');
+}
+
+  var items = document.querySelectorAll('.circle a');
+  for(var i = 0, l = items.length; i < l; i++) {
+  items[i].style.left = (50 - 35*Math.cos(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
+  items[i].style.top = (50 + 35*Math.sin(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
+}
+
+</script>
+
+
+
   </html>

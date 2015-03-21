@@ -1,0 +1,18 @@
+body{
+	height: 100%;
+	width: 100%;
+
+}
+
+h1, h2, h3, h4, h5, h6{
+
+	font-family: 'Julius Sans One', sans-serif;
+}
+
+h1 {
+	font-size: 80px;
+}
+
+h2{
+	font-size: 50px;
+}

@@ -1,16 +1,17 @@
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/home.css">
+  <link href='http://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
 
 <style>
 
 .test{
   position: relative;
-  height:200px;
-  width:100px;
+  height:50%;
+  width:15%;
   border-radius: 0px 200px 200px 0px;
   -moz-border-radius: 0px 200px 200px 0px;
   -webkit-border-radius: 0px 200px 200px 0px;
-  background:green;
+  background:#707070;
   box-shadow:0 0 0 2vmin white;
 }
 
@@ -18,30 +19,48 @@
 a{
   position:absolute;
   left:0; top:0;
-  width:100%; height:50%;
+  width:70%; height:30%;
   overflow:hidden;
   transform:scale(.5) translateZ(0px);
-  background:green;
+  background:inherit;
   z-index: -2;
 }
 
 a:nth-child(1){
-  left: 15.5%;
-  top: -25%;
+  left: 15%;
+  top: -20%;
   border-radius:50% 50% 50% 50%;
   transform-origin: 110% 110%;
   transition:transform .4s .15s;
   -ms-transform: rotate(-2deg); /* IE 9 */
   -webkit-transform: rotate(-2deg); /* Chrome, Safari, Opera */
   transform: rotate(-5deg);
-  background: gray;
+  background: #707070;
+  z-index: -1;
+}
+
+a:nth-child(2){
+  left: 70%;
+  top: 15%;
+  border-radius:50% 50% 50% 50%;
+  transform-origin: 110% 110%;
+  transition:transform .4s .15s;
+  -ms-transform: rotate(-2deg); /* IE 9 */
+  -webkit-transform: rotate(-2deg); /* Chrome, Safari, Opera */
+  transform: rotate(-5deg);
+  background: #707070;
   z-index: -1;
 }
 
 .container{
   padding: 0%;
-  margin-left: 0%;
+  margin: 0%;
+  height: 100%;
+  width: 100%;
+
 }
+
+
 
 
 /*div{
@@ -96,6 +115,10 @@ a:nth-child(5){
 }
 */
 
+svg{
+  height: 100%;
+  width: 100%;
+}
 
 </style>
 
@@ -104,11 +127,58 @@ a:nth-child(5){
 
 <div class="wrapper">
   <div class="container">
-      <div class="test" style="margin-top:15%">
-        <a href="#"></a>
-        <a href="#"></a>
-      </div>
+    <div class="col-lg-5" style="background-color:blue">
+    <svg width="400" height="400">
+    <path d="M20,200 L360,0 A180,180 0 0,1 20,200 z"
+        style="fill:#707070;
+            fill-opacity: 1;
+            stroke:#707070;
+            stroke-width: 1"
+        transform = "rotate(-60 320 400)"/>
+    </svg>
   </div>
+  <div class="col-lg-7">
+      <!--<div class="test" style="margin-top:15%">-->
+        <!--<a href="#"></a>
+        <a href="#"></a>
+        <a href="#"></a>-->
+        <h1> TEST </h1>
+    </div>
+  </div>
+
+
+
+  <div class="container" style="background-color:red">
+    <h2> Emoji </h2>
+
+  </div>  
+
+  <div class="container">
+    <h2> Landscape </h2>
+
+
+  </div>
+
+  <div class="container">
+    <h2> Words </h2>
+
+
+  </div>
+
+    <div class="container">
+    <h2> Colors </h2>
+
+
+  </div>
+
+    <div class="container">
+    <h2> Final </h2>
+
+
+  </div>
+
+
+
 </div> 
 
 

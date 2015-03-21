@@ -9,8 +9,6 @@
 
 body{
   overflow-x: hidden;
-  overflow-y: hidden;
-
 }
 
 .test{
@@ -122,7 +120,7 @@ svg{
     -webkit-transform: rotateX(360deg);
 }
 
-.emoticon, .colors, .landscape, .words, .final{
+.emoticon, .colors, .landscape, .words{
   display: none;
 }
 
@@ -150,12 +148,45 @@ svg{
   background-color: #ff9900;
 }
 
+.rotate {-moz-transform: rotate(90deg);
+         -webkit-transform:rotate(90deg); 
+         -ms-transform:rotate(90deg);
+         -o-transform:rotate(90deg);
+         }
+
+.nrotate {-moz-transform: rotate(-90deg);
+         -webkit-transform:rotate(-90deg); 
+         -ms-transform:rotate(-90deg);
+         -o-transform:rotate(-90deg);
+         }
+
 #co{}
 
 #l, #m{}
 
 #n, #o, #p, #q{
   display: none;
+}
+
+#glass {
+    position: relative;
+    height: 50%;
+    width: 20%;
+    background: rgba(255,255,255,.1);
+    border-radius: 0% 0% 15% 15%;
+    border: 3px solid;
+    border-top: 0;
+    border-bottom: 20px solid;
+    border-color: rgba(255,255,255,.7);
+    overflow: hidden;
+}
+
+#drink {
+    position: absolute;
+    top:100%; right:0; bottom:0; left:0;
+    background: linear-gradient(to bottom, orange, orangered);
+    box-shadow: inset 0 2px 1px rgba(255,69,0,.2);
+    opacity: .7;
 }
 
 #emoticon, #landscape, #words, #colors{}
@@ -269,6 +300,10 @@ svg{
     <div class="container final" style="background-color:#b8b5b5">
     <h2 style="text-align:center"> Final </h2>
 
+    <div class="col-md-4"></div>
+    <div class="col-md-4" id="glass"><div id="drink"></div></div>
+    <div class="col-md-4"></div>
+
 
   </div>
 
@@ -347,9 +382,28 @@ $('#colors').hover(function(){
   $('#m').show();
 });
 
+var worker = null;
+var loaded = 0;
 
+function increment() {
+    $('#counter').html(loaded+'%');
+    $('#drink').css('top', (100-loaded*.9)+'%');
+    if(loaded==100) {
+        loaded = 0;
+        stopLoading();
+       // setTimeout(startLoading, 1000);
+    }
+    else loaded++;    
+}
 
+function startLoading() {
+    worker = setInterval(increment, 90);
+}
+function stopLoading() {
+    clearInterval(worker);
+}
 
+startLoading();
 
 
 

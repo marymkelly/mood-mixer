@@ -7,11 +7,6 @@
 
 <style>
 
-body{
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
 .test{
   position: relative;
   height:50%;
@@ -24,23 +19,10 @@ body{
 }
 
 
-.container{
-  padding: 0%;
-  margin: 0%;
-  height: 100%;
-  width: 100%;
-
-}
-
-svg{
-  height: 100%;
-  width: 100%;
-}
-
 .circular-menu {
   width: 530px;
   height: 410px;
-  margin: 50px auto 0;
+  margin: 5% auto 0;
   position: relative;
 }
 
@@ -175,7 +157,7 @@ svg{
          -o-transform:rotate(-90deg);
          }
 
-#co{}
+.line:hover { -moz-box-shadow: 0 2px 0 black; -webkit-box-shadow: 0 2px 0 black; box-shadow: 0 2px 0 black; } 
 
 #l, #m{}
 
@@ -431,9 +413,6 @@ svg{
 
 /*END OF HOVER FOR LANDSCAPE*/
 
-
-
-
 #emoticon, #landscape, #words, #colors{}
 
 .yourdrink{
@@ -445,20 +424,11 @@ svg{
 }
 
 </style>
-
-  <html>
-  <body>
+<html>
+<body>
 
 <div class="wrapper">
   <div class="container home">
-   <!-- <svg width="400" height="400">
-    <path d="M20,200 L360,0 A180,180 0 0,1 20,200 z"
-        style="fill:#707070;
-            fill-opacity: 1;
-            stroke:#707070;
-            stroke-width: 1"
-        transform = "rotate(-60 320 400)"/>
-    </svg>-->
      <div class="col-md-5">
       <nav class="circular-menu">
        <div class="circle">
@@ -471,9 +441,12 @@ svg{
       <a class="fa fa-paint-brush fa-3x"  id="colors"></a>
       <a class="fa fa-circle fa-1x"></a>
       </div>
-      <a class="menu-button" style="background-image:url('img/shaker.png'); background-size:70%; background-repeat:no-repeat; background-position:center"></a>
+      <a class="menu-button" style="background-image:url('img/shaker.png'); background-size:70%;
+       background-repeat:no-repeat; background-position:center"></a>
       </nav>
-    </div>
+
+
+  </div>
     <div class="col-md-7">
       <div class="title" id="co"><h1> Moodologist </h1></div>
       <div id="m"><h3 style="margin-top:-10px; font-size:1.2em;">A mix for every mood. Pick a category in the menu on the left<br>
@@ -483,10 +456,7 @@ svg{
       <div id="p"><h3> Word </h3> </div>
       <div id="q"><h3> Color </h3> </div>
     </div>    
-
-
   </div>
-
 
 
   <div class="container emoticon" style="background-color:#e0d9fe">
@@ -498,6 +468,7 @@ svg{
        <div id="Mad"> <div class="col-md-2" id="emoti"><img src="img/mad.png" alt="Smiley face" width="60%"></div></div>
         </div>
   </div> 
+
 
   <div class="container landscape" align="center" style="background-color:#E5FEFE; padding-top:8%">
     <h2 style="text-align:center; ">Choose one of the following:</h2>
@@ -514,12 +485,12 @@ svg{
   <div class="container words" style="background-color:#fefee3">
     <div class="row" style="padding:5%">
         <h3 align="center" style="font-size:3em;padding-bottom:5%">Pick a word:</h3>
-          <div id = "Simple" class="col-md-5"><img src="img/simple-1.png" alt="Simple" width="97%"></div>
-          <div id = "Fun" class="col-md-5 col-md-offset-1"><img src="img/fun-1.png" alt="Fun" width=""></div>
+          <div id = "Simple" class="col-md-5 line"><img src="img/simple-1.png" alt="Simple" width="97%"></div>
+          <div id = "Fun" class="col-md-5 line col-md-offset-1"><img src="img/fun-1.png" alt="Fun" width=""></div>
     </div>
     <div class="row">
-          <div id = "Classy" class="col-md-5 col-md-offset-1" style="top:-10%;"><img src="img/classy-1.png" alt="Classy" width=""></div>
-          <div id = "Spicy"class="col-md-5" style="float:left;"><img src="img/spicy-1.png" alt="Spicy" width=""></div>
+          <div id = "Classy" class="col-md-5 line col-md-offset-1" style="top:-10%;"><img src="img/classy-1.png" alt="Classy" width=""></div>
+          <div id = "Spicy"class="col-md-5 line" style="float:left;"><img src="img/spicy-1.png" alt="Spicy" width=""></div>
     </div>
   </div>
 
@@ -550,8 +521,8 @@ svg{
       <!--<div class="col-md-4"><h3 id="tree"> For more information about this cocktail, please visit....</div>-->
     </div>
     <div clas="row" style="padding-top:5%;">
-    <div class="col-md-4 col-md-offset-1" id="poweranother" ><div class="spheret" style="background-color:black; color:white; padding-top:7%;" align="center" ><h4>Pour Me Another</h4></div></div>
-    <div class="col-md-4"><div class="spheret" style="background-color:black; color:white; padding-top:7%" align="center" id="reload" ><h4>Back to Beginning</h4></div></div> 
+    <div class="col-md-4 col-md-offset-1" id="reload" ><div class="spheret" style="background-color:black; color:white; padding-top:7%;" align="center" ><h4>Back to Beginning</h4></div></div>
+    <div class="col-md-4"><div class="spheret" style="background-color:black; color:white; padding-top:7%" align="center" id="poweranother" ><h4>Pour Me Another</h4></div></div> 
   </div>
       </div>
 
@@ -582,10 +553,12 @@ $('#reload').click(function() {
     location.reload();
 });
 
+
 $('#Happy, #Giggly, #Sad, #Mad').click(function(){
   $('.emoticon').fadeOut('fast');
+  $('body').css({'background-color':'#e5e5e5'});
   $('.final').show('slow');
-  $('#glass').delay(1000).animate({'opacity':'1', 'left':'20%'}, 500, (function(){
+  $('#glass').delay(600).animate({'opacity':'1', 'left':'20%'}, 500, (function(){
       $('.yourdrink').animate({'left':'45%'}).show(400);
       $('.spheret').show(800);
   }));
@@ -594,8 +567,9 @@ $('#Happy, #Giggly, #Sad, #Mad').click(function(){
 
 $('#Mountains, #Skyline, #Island, #Country').click(function(){
   $('.landscape').fadeOut('fast');
+  $('body').css({'background-color':'#e5e5e5'});
   $('.final').show('slow');
-  $('#glass').delay(1000).animate({'opacity':'1', 'left':'20%'}, 500, (function(){
+  $('#glass').delay(600).animate({'opacity':'1', 'left':'20%'}, 500, (function(){
       $('.yourdrink').animate({'left':'45%'}).show(400);
       $('.spheret').show(800);
   }));
@@ -604,8 +578,9 @@ $('#Mountains, #Skyline, #Island, #Country').click(function(){
 
 $('#Green, #Blue, #Orange, #Red').click(function(){
   $('.colors').fadeOut('fast');
+  $('body').css({'background-color':'#e5e5e5'});
   $('.final').show('slow');
-  $('#glass').delay(1000).animate({'opacity':'1', 'left':'20%'}, 500, (function(){
+  $('#glass').delay(600).animate({'opacity':'1', 'left':'20%'}, 500, (function(){
       $('.yourdrink').animate({'left':'45%'}).show(400);
       $('.spheret').show(800);
   }));
@@ -614,8 +589,9 @@ $('#Green, #Blue, #Orange, #Red').click(function(){
 
 $('#Simple, #Fun, #Classy, #Spicy').click(function(){
   $('.words').fadeOut('fast');
+  $('body').css({'background-color':'#e5e5e5'});
   $('.final').show('slow');
-  $('#glass').delay(1000).animate({'opacity':'1', 'left':'20%'}, 500, (function(){
+  $('#glass').delay(600).animate({'opacity':'1', 'left':'20%'}, 500, (function(){
       $('.yourdrink').animate({'left':'45%'}).show(400);
       $('.spheret').show(800);
   }));
@@ -691,13 +667,15 @@ function increment() {
 }
 
 function startLoading() {
-    worker = setInterval(increment, 50);
+    worker = setInterval(increment, 15);
 }
 function stopLoading() {
     clearInterval(worker);
 }
 
-
+$('#poweranother').click(function() {
+    startLoading();
+});
 
 function fadeDivIn(){
     $("#co").animate({'color': "#FFFF00" }, 1000, function(){fadeDiv2();});

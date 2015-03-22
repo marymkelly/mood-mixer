@@ -246,6 +246,184 @@ svg{
 
 
 
+/*START OF HOVER FOR LANDSCAPE*/
+
+/* Wobble Vertical */
+@-webkit-keyframes hvr-wobble-vertical {
+  16.65% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+
+  33.3% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+
+  49.95% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+
+  66.6% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+
+  83.25% {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes hvr-wobble-vertical {
+  16.65% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+
+  33.3% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+
+  49.95% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+
+  66.6% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+
+  83.25% {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.hvr-wobble-vertical {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hvr-wobble-vertical:hover, .hvr-wobble-vertical:focus, .hvr-wobble-vertical:active {
+  -webkit-animation-name: hvr-wobble-vertical;
+  animation-name: hvr-wobble-vertical;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+/* Wobble Horizontal */
+@-webkit-keyframes hvr-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+  }
+
+  33.3% {
+    -webkit-transform: translateX(-6px);
+    transform: translateX(-6px);
+  }
+
+  49.95% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+
+  66.6% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes hvr-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+  }
+
+  33.3% {
+    -webkit-transform: translateX(-6px);
+    transform: translateX(-6px);
+  }
+
+  49.95% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+
+  66.6% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.hvr-wobble-horizontal {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hvr-wobble-horizontal:hover, .hvr-wobble-horizontal:focus, .hvr-wobble-horizontal:active {
+  -webkit-animation-name: hvr-wobble-horizontal;
+  animation-name: hvr-wobble-horizontal;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+/*END OF HOVER FOR LANDSCAPE*/
+
+
+
 
 #emoticon, #landscape, #words, #colors{}
 </style>
@@ -301,14 +479,14 @@ svg{
         </div>
   </div> 
 
-  <div class="container landscape" align="center" style="background-color:#fefee3; padding-top:8%">
+  <div class="container landscape" align="center" style="background-color:#E5FEFE; padding-top:8%">
     <h2 style="text-align:center; ">Choose one of the following:</h2>
 
       <div class="row" style="margin-top:5%">
-          <div id="Mountains"><div class="col-md-2" style="margin-left:3%"><img src="img/lake.jpg" alt="Lake" height="40%" width="120%" style="border-radius:100%"></div></div>
-          <div id="Skyline"><div class="col-md-2 col-md-offset-1"><img src="img/skyline.jpg" alt="Skyline at night" height="40%" width="120%" style="border-radius:100%"></div></div>
-          <div id="Island"><div class="col-md-2 col-md-offset-1"><img src="img/Tropical-Island.jpg" alt="Island" height="40%" width="120%" style="border-radius:100%"></div></div>
-          <div id="Country"><div class="col-md-2 col-md-offset-1"><img src="img/forest.jpg" alt="Forest" height="40%" width="120%" style="border-radius:100%"></div></div>
+          <div id="Mountains"><div class="col-md-2" style="margin-left:3%"><img class="hvr-wobble-vertical" src="img/lake.jpg" alt="Lake" height="40%" width="120%" style="border-radius:100%"></div></div>
+          <div id="Skyline"><div class="col-md-2 col-md-offset-1"><img class="hvr-wobble-horizontal" src="img/skyline.jpg" alt="Skyline at night" height="40%" width="120%" style="border-radius:100%"></div></div>
+          <div id="Island"><div class="col-md-2 col-md-offset-1"><img class="hvr-wobble-vertical" src="img/Tropical-Island.jpg" alt="Island" height="40%" width="120%" style="border-radius:100%"></div></div> 
+          <div id="Country"><div class="col-md-2 col-md-offset-1"><img class="hvr-wobble-horizontal" src="img/forest.jpg" alt="Forest" height="40%" width="120%" style="border-radius:100%"></div></div>
   </div>
   </div>
 

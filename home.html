@@ -9,6 +9,7 @@
 
 body{
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .test{
@@ -120,7 +121,7 @@ svg{
     -webkit-transform: rotateX(360deg);
 }
 
-.emoticon, .colors, .landscape, .words{
+.emoticon, .colors, .landscape, .words, .final{
   display: none;
 }
 
@@ -224,9 +225,12 @@ svg{
       <div class="title" id="co"><h1> Moodologist </h1></div>
       <div id="m"><h3 style="margin-top:-10px;">&nbsp;&nbsp;&nbsp;&nbsp; You thirsty brah? - Brosapham Lincoln </h3> </div>
       <div id="n"><h3> Emoticon </h3> </div>
+<!--
+      <div id="m"><h3> You thirsty brah? - Brosapham Lincoln </h3> </div>
+      <div id="n"><h3> Emoji </h3> </div>
       <div id="o"><h3> Landscape </h3> </div>
       <div id="p"><h3> Word </h3> </div>
-      <div id="q"><h3> Color </h3> </div>
+      <div id="q"><h3> Color </h3> </div>-->
     </div>    
 
 
@@ -236,24 +240,22 @@ svg{
 
   <div class="container emoticon" style="background-color:#e0d9fe">
       <div class="row" style="padding-top:23%">
-        <div class="col-md-2 col-md-offset-2" id="emoti" style="margin-left:20%"><img src="img/sad.png" width="60%"></div>
-        <div class="col-md-2" id="emoti"><img src="img/giggly.png" alt="Smiley face" width="60%"></div>
-        <div class="col-md-2" id="emoti"><img src="img/happy.png" alt="Smiley face" width="60%"></div>
-        <div class="col-md-2" id="emoti"><img src="img/mad.png" alt="Smiley face" width="60%"></div>
+        <div id="Sad"><div class="col-md-2 col-md-offset-2" id="emoti" style="margin-left:20%"><img src="img/sad.png" width="60%"></div></div>
+        <div id="Giggly"><div class="col-md-2" id="emoti"><img src="img/giggly.png" alt="Smiley face" width="60%"></div></div>
+        <div id="Happy"><div class="col-md-2" id="emoti"><img src="img/happy.png" alt="Smiley face" width="60%"></div></div>
+       <div id="Mad"> <div class="col-md-2" id="emoti"><img src="img/mad.png" alt="Smiley face" width="60%"></div></div>
         </div>
-      </div>
-  </div>  
+  </div> 
 
   <div class="container landscape" align="center" style="background-color:#fefee3; padding-top:8%">
     <h2 style="text-align:center; ">Choose one of the following:</h2>
-      <div class="row" style="margin-top:5%; padding-top:2%;">
-          <div class="col-md-2" style="margin-left:3%"><img src="img/lake.jpg" alt="Lake" height="40%" width="120%" style="border-radius:100%"></div>
-          <div class="col-md-2 col-md-offset-1"><img src="img/skyline.jpg" alt="Skyline at night" height="40%" width="120%" style="border-radius:100%"></div>
-          <div class="col-md-2 col-md-offset-1"><img src="img/Tropical-Island.jpg" alt="Island" height="40%" width="120%" style="border-radius:100%"></div>
-          <div class="col-md-2 col-md-offset-1"><img src="img/forest.jpg" alt="Forest" height="40%" width="120%" style="border-radius:100%"></div>
+
+      <div class="row" style="margin-top:5%">
+          <div id="Mountains"><div class="col-md-2" style="margin-left:3%"><img src="img/lake.jpg" alt="Lake" height="40%" width="120%" style="border-radius:100%"></div></div>
+          <div id="Skyline"><div class="col-md-2 col-md-offset-1"><img src="img/skyline.jpg" alt="Skyline at night" height="40%" width="120%" style="border-radius:100%"></div></div>
+          <div id="Island"><div class="col-md-2 col-md-offset-1"><img src="img/Tropical-Island.jpg" alt="Island" height="40%" width="120%" style="border-radius:100%"></div></div>
+          <div id="Country"><div class="col-md-2 col-md-offset-1"><img src="img/forest.jpg" alt="Forest" height="40%" width="120%" style="border-radius:100%"></div></div>
   </div>
-
-
   </div>
 
 
@@ -268,45 +270,38 @@ svg{
           <div class="col-md-5 col-md-offset-1" style="top:-10%;"><img src="img/classy-1.png" alt="Classy" width=""></div>
           <div class="col-md-5" style="float:left;"><img src="img/spicy-1.png" alt="Spicy" width=""></div>
     </div>
-
   </div>
-
-
-
-
-
 
 
     <div class="container colors">
       <h3 style="text-align:center; padding-top:8%; font-size:3em;">Pick a color:</h3>
       <div class="row" style="padding-left:23%; padding-right:20%; padding-top: 10%;">
         <div class="col-md-3">
-          <div class="sphere green"></div>
+          <div id ="Green" class="sphere green"></div>
         </div>
         <div class="col-md-3">
-          <div class="sphere blue"></div>
+          <div id = "Blue" class="sphere blue"></div>
         </div>
         <div class="col-md-3">
-          <div class="sphere yellow"></div>
+          <div id = "Orange" class="sphere yellow"></div>
         </div>
         <div class="col-md-3">
-          <div class="sphere red"></div>
+          <div  id = "Red" class="sphere red"></div>
         </div>
         </div>
       </div>
 
 
-  </div>
+      <div class="container final" style="background-color:#b8b5b5; padding-top:13%">
 
-    <div class="container final" style="background-color:#b8b5b5">
-    <h2 style="text-align:center"> Final </h2>
+      <div class="col-md-4" align="center"><h1><span class="yourdrink">TEST</span></h1></div>
+      <div class="col-md-4" id="glass" style="margin-left:6%;"><div id="drink"></div> 
 
-    <div class="col-md-4"></div>
-    <div class="col-md-4" id="glass"><div id="drink"></div></div>
-    <div class="col-md-4"></div>
+      <div id="poweranother">Power Me Another</div> 
+      </div>
 
-
-  </div>
+      <div class="col-md-4" style="padding-left:4%"><h3> For more information about this cocktail, please visit....</div>
+      </div>
 
 
 
@@ -315,6 +310,7 @@ svg{
 
 </body>
 
+<script src="js/java.js"></script>
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/jquery-2.1.1.min.js"></script>
 <script src="js/jquery-ui.min.js"></script>
@@ -329,6 +325,30 @@ document.querySelector('.menu-button').onmouseover = function(e) {
   items[i].style.left = (50 - 35*Math.cos(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
   items[i].style.top = (50 + 35*Math.sin(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
 }
+
+$('#Happy, #Giggly, #Sad, #Mad').click(function(){
+  $('.emoticon').fadeOut('fast');
+  $('.final').show('slow');
+  startLoading();
+});
+
+$('#Mountains, #Skyline, #Island, #Country').click(function(){
+  $('.landscape').fadeOut('fast');
+  $('.final').show('slow');
+  startLoading();
+});
+
+/*$('#Happy, #Giggly, #Sad, #Mad').click(function(){
+  $('.emoticon').fadeOut('fast');
+  $('.final').show('slow');
+  startLoading();
+});
+
+/*$('#Happy, #Giggly, #Sad, #Mad').click(function(){
+  $('.emoticon').fadeOut('fast');
+  $('.final').show('slow');
+  startLoading();
+});*/
 
 $('#emoticon').click(function(){
   $('.home').fadeOut('fast');
@@ -383,6 +403,8 @@ $('#colors').hover(function(){
   $('#m').show();
 });
 
+
+
 var worker = null;
 var loaded = 0;
 
@@ -404,7 +426,8 @@ function stopLoading() {
     clearInterval(worker);
 }
 
-startLoading();
+
+
 
 
 

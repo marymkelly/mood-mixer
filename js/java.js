@@ -229,7 +229,7 @@ var gigglyDrinks = { "Giggly" : [
 var happyDrinks = { "Happy" : [
 				{"name" : "Hurricane"},
 				{"name" : "Jack and Coke"},	
-				{"name" : "Piña Colada"},
+				{"name" : "Pina Colada"},
 				{"name" : "Planter's Punch"},
 				{"name" : "Zombie"},
 				{"name" : "Juan Collins"},
@@ -279,75 +279,78 @@ var WRD;
 
 $("#Happy").onclick=function(){
 	var position = Math.floor((Math.random() * happyDrinks.Happy.length - 1 ) + 0);
-	document.write(happyDrinks.Happy[position].name);
+	document.getElementsByClassName("yourdrink")[0].innerHTML=happyDrinks.Happy[position].name;
 };
 
 $("#Mad").onclick=function(){
 	var position = Math.floor((Math.random() * gigglyDrinks.Giggly.length - 1 ) + 0);
-	document.write(gigglyDrinks.Giggly[position].name);
+	document.getElementsByClassName("yourdrink")[0].innerHTML=gigglyDrinks.Giggly[position].name;
 };
 $("#Sad").onclick=function(){
 	var position = Math.floor((Math.random() * sadDrinks.Sad.length - 1 ) + 0);
-	document.write(sadDrinks.Sad[position].name);
+	document.getElementsByClassName("yourdrink")[0].innerHTML=sadDrinks.Sad[position].name;
 };
 $("#Giggly").onclick=function(){
 	var position = Math.floor((Math.random() * madDrinks.Mad.length - 1 ) + 0);
-	document.write(madDrinks.Mad[position].name);
+	document.getElementsByClassName("yourdrink")[0].innerHTML=madDrinks.Mad[position].name;
 };
 
 
 $("#Mountains").onclick=function(){
 	var position = Math.floor((Math.random() * mountainDrinks.Mountains.length - 1 ) + 0);
-	document.write(mountainDrinks.Mountains[position].name);
+	document.getElementsByClassName("yourdrink")[0].innerHTML=mountainDrinks.Mountains[position].name;
 };
 $("#Island").onclick=function(){
 	var position = Math.floor((Math.random() * islandDrinks.Island.length - 1 ) + 0);
-	document.write(islandDrinks.Island[position].name);	
+	document.getElementsByClassName("yourdrink")[0].innerHTML=islandDrinks.Island[position].name;	
 };
 $("#Skyline").onclick=function(){
 	var position = Math.floor((Math.random() * skylineDrinks.Skyline.length - 1 ) + 0);
-	document.write(skylineDrinks.Skyline[position].name);
+	document.getElementsByClassName("yourdrink")[0].innerHTML=skylineDrinks.Skyline[position].name;
 };
 $("#Country").onclick=function(){
 	var position = Math.floor((Math.random() * countryDrinks.Country.length - 1 ) + 0);
-	document.write(countryDrinks.Country[position].name);	
+	document.getElementsByClassName("yourdrink")[0].innerHTML=countryDrinks.Country[position].name;	
 };
 
 $("#Red").onclick=function(){
 	var position = Math.floor((Math.random() * redDrinks.Red.length - 1 ) + 0);
-	document.write(redDrinks.Red[position].name);	
+	document.getElementsByClassName("yourdrink")[0].innerHTML=redDrinks.Red[position].name;	
 };
 $("#Blue").onclick=function(){
 	var position = Math.floor((Math.random() * blueDrinks.Blue.length - 1 ) + 0);
-	document.write(blueDrinks.Blue[position].name);
+	document.getElementsByClassName("yourdrink")[0].innerHTML=blueDrinks.Blue[position].name;
 };
 
 $("#Green").onclick=function(){
 	var position = Math.floor((Math.random() * greenDrinks.Green.length - 1 ) + 0);
-	document.write(greenDrinks.Green[position].name);
+	document.getElementsByClassName("yourdrink")[0].innerHTML=greenDrinks.Green[position].name;
 };
 
 $("#Orange").onclick=function(){
 	var position = Math.floor((Math.random() * orangeDrinks.Orange.length - 1 ) + 0);
-	document.write(orangeDrinks.Orange[position].name);	
+	document.getElementsByClassName("yourdrink")[0].innerHTML=orangeDrinks.Orange[position].name;	
 };
 
 $("#Fun").onclick=function(){
 	var position = Math.floor((Math.random() * funDrinks.Fun.length - 1 ) + 0);
-	document.write(funDrinks.Fun[position].name);	
+	document.getElementsByClassName("yourdrink")[0].innerHTML=funDrinks.Fun[position].name;	
 };
 $("#Spicy").onclick=function(){
 	var position = Math.floor((Math.random() * spicyDrinks.Spicy.length - 1 ) + 0);
-	document.write(spicyDrinks.Spicy[position].name);	
+	document.getElementsByClassName("yourdrink")[0].innerHTML=spicyDrinks.Spicy[position].name;	
 };
 $("#Classy").onclick=function(){
 	var position = Math.floor((Math.random() * classyDrinks.Classy.length - 1 ) + 0);
-	document.write(classyDrinks.Classy[position].name);	
+	document.getElementsByClassName("yourdrink")[0].innerHTML=classyDrinks.Classy[position].name;	
 };
 $("#Simple").onclick=function(){
 	var position = Math.floor((Math.random() * simpleDrinks.Simple.length - 1 ) + 0);
-	document.write(simpleDrinks.Simple[position].name);	
+	document.getElementsByClassName("yourdrink")[0].innerHTML=simpleDrinks.Simple[position].name;	
 };
+
+
+
 
 /*End of Button functions*/
 

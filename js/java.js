@@ -326,7 +326,7 @@ $("#Red").onclick=function(){
 $("#Blue").onclick=function(){
 	tv = "Blue";
 	var position = Math.floor((Math.random() * blueDrinks.Blue.length - 1 ) + 0);
-	document.getElementsByClassName("yourdrink")[0].innerHTML=blueDrinks.Blue[position].name;
+	document.getElementsByClassName("yourdrink")[0].innerHTML=blueDrinks.Blue[0].name;
 };
 
 $("#Green").onclick=function(){
@@ -363,27 +363,68 @@ $("#Simple").onclick=function(){
 };
 
 $("#poweranother").onclick=function(){
-	var position = Math.floor((Math.random() * simpleDrinks.Simple.length - 1 ) + 0);
 
 	if (tv == "Mountains"){
+		var position = Math.floor((Math.random() * mountainDrinks.Mountains.length - 1 ) + 0);
+		
+
 		document.getElementsByClassName("yourdrink")[0].innerHTML=mountainDrinks.Mountains[position].name;
 	}
 
-	else if (tv == "Simple"){document.getElementsByClassName("yourdrink")[0].innerHTML=simpleDrinks.Simple[position].name;}
-	else if (tv == "Classy"){document.getElementsByClassName("yourdrink")[0].innerHTML=classyDrinks.Classy[position].name;}
-	else if (tv == "Spicy"){document.getElementsByClassName("yourdrink")[0].innerHTML=spicyDrinks.Spicy[position].name;	}
-	else if (tv == "Fun"){document.getElementsByClassName("yourdrink")[0].innerHTML=funDrinks.Fun[position].name;	}
-	else if (tv == "Orange"){document.getElementsByClassName("yourdrink")[0].innerHTML=orangeDrinks.Orange[position].name;}
-	else if (tv == "Green"){document.getElementsByClassName("yourdrink")[0].innerHTML=greenDrinks.Green[position].name;}
-	else if (tv == "Blue"){document.getElementsByClassName("yourdrink")[0].innerHTML=blueDrinks.Blue[position].name;}
-	else if (tv == "Red"){document.getElementsByClassName("yourdrink")[0].innerHTML=redDrinks.Red[position].name;	}
-	else if (tv == "Country"){document.getElementsByClassName("yourdrink")[0].innerHTML=countryDrinks.Country[position].name;}
-	else if (tv == "Skyline"){document.getElementsByClassName("yourdrink")[0].innerHTML=skylineDrinks.Skyline[position].name;}
-	else if (tv == "Island") {document.getElementsByClassName("yourdrink")[0].innerHTML=islandDrinks.Island[position].name;}
-	else if (tv == "Mad"){document.getElementsByClassName("yourdrink")[0].innerHTML=madDrinks.Mad[position].name;}
-	else if (tv == "Sad"){document.getElementsByClassName("yourdrink")[0].innerHTML=sadDrinks.Sad[position].name;}
-	else if (tv == "Giggly"){document.getElementsByClassName("yourdrink")[0].innerHTML=gigglyDrinks.Giggly[position].name;}
-	else if (tv == "Happy"){document.getElementsByClassName("yourdrink")[0].innerHTML=happyDrinks.Happy[position].name;}
+	else if (tv == "Simple"){
+		var position = Math.floor((Math.random() * simpleDrinks.Simple.length - 1 ) + 0);
+
+		document.getElementsByClassName("yourdrink")[0].innerHTML=simpleDrinks.Simple[position].name;}
+
+	else if (tv == "Classy"){
+		var position = Math.floor((Math.random() * classyDrinks.Classy.length - 1 ) + 0);
+		
+		document.getElementsByClassName("yourdrink")[0].innerHTML=classyDrinks.Classy[position].name;}
+	else if (tv == "Spicy"){
+		var position = Math.floor((Math.random() * spicyDrinks.Spicy.length - 1 ) + 0);
+		
+		document.getElementsByClassName("yourdrink")[0].innerHTML=spicyDrinks.Spicy[position].name;	}
+	else if (tv == "Fun"){
+		var position = Math.floor((Math.random() * funDrinks.Fun.length - 1 ) + 0);
+		
+		document.getElementsByClassName("yourdrink")[0].innerHTML=funDrinks.Fun[position].name;	}
+	else if (tv == "Orange"){
+		var position = Math.floor((Math.random() * orangeDrinks.Orange.length - 1 ) + 0);
+		
+		document.getElementsByClassName("yourdrink")[0].innerHTML=orangeDrinks.Orange[position].name;}
+	else if (tv == "Green"){
+		var position = Math.floor((Math.random() * greenDrinks.Green.length - 1 ) + 0);
+		
+		document.getElementsByClassName("yourdrink")[0].innerHTML=greenDrinks.Green[position].name;}
+	else if (tv == "Blue"){
+		var position = Math.floor((Math.random() * blueDrinks.Blue.length - 1 ) + 0);	
+	
+		document.getElementsByClassName("yourdrink")[0].innerHTML=blueDrinks.Blue[1].name;}
+	else if (tv == "Red"){
+		var position = Math.floor((Math.random() * redDrinks.Red.length - 1 ) + 0);
+
+		document.getElementsByClassName("yourdrink")[0].innerHTML=redDrinks.Red[position].name;	}
+	else if (tv == "Country"){
+		var position = Math.floor((Math.random() * countryDrinks.Country.length - 1 ) + 0);
+		document.getElementsByClassName("yourdrink")[0].innerHTML=countryDrinks.Country[position].name;}
+	else if (tv == "Skyline"){
+		var position = Math.floor((Math.random() * skylineDrinks.Skyline.length - 1 ) + 0);
+		document.getElementsByClassName("yourdrink")[0].innerHTML=skylineDrinks.Skyline[position].name;}
+	else if (tv == "Island") {
+		var position = Math.floor((Math.random() * islandDrinks.Island.length - 1 ) + 0);
+		document.getElementsByClassName("yourdrink")[0].innerHTML=islandDrinks.Island[position].name;}
+	else if (tv == "Mad"){
+		var position = Math.floor((Math.random() * madDrinks.Mad.length - 1 ) + 0);
+		document.getElementsByClassName("yourdrink")[0].innerHTML=madDrinks.Mad[position].name;}
+	else if (tv == "Sad"){
+		var position = Math.floor((Math.random() * sadDrinks.Sad.length - 1 ) + 0);
+		document.getElementsByClassName("yourdrink")[0].innerHTML=sadDrinks.Sad[position].name;}
+	else if (tv == "Giggly"){
+		var position = Math.floor((Math.random() * gigglyDrinks.Giggly.length - 1 ) + 0);
+		document.getElementsByClassName("yourdrink")[0].innerHTML=gigglyDrinks.Giggly[position].name;}
+	else if (tv == "Happy"){
+		var position = Math.floor((Math.random() * happyDrinks.Happy.length - 1 ) + 0);
+		document.getElementsByClassName("yourdrink")[0].innerHTML=happyDrinks.Happy[position].name;}
 
 	else {}
 

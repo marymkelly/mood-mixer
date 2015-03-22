@@ -1,0 +1,706 @@
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/home.css">
+  <link href='http://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+ <!-- <link href='http://fonts.googleapis.com/css?family=Rouge+Script|Monoton|Kaushan+Script|Poiret+One' rel='stylesheet' type='text/css'>
+-->
+
+<style>
+
+.test{
+  position: relative;
+  height:50%;
+  width:15%;
+  border-radius: 0px 200px 200px 0px;
+  -moz-border-radius: 0px 200px 200px 0px;
+  -webkit-border-radius: 0px 200px 200px 0px;
+  background:#707070;
+  box-shadow:0 0 0 2vmin white;
+}
+
+
+.circular-menu {
+  width: 530px;
+  height: 410px;
+  margin: 5% auto 0;
+  position: relative;
+}
+
+.circle {
+  width: 550px;
+  height: 550px;
+  opacity: 0;
+ 
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -transform: scale(0);
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+}
+
+.open.circle {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -transform: scale(1);
+}
+
+.circle a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  height: 40px;
+  width: 40px;
+  line-height: 50px;
+  margin-left: -20px;
+  margin-top: -20px;
+  position: absolute;
+  text-align: center;
+}
+ 
+.circle a:hover {
+  color: #4b2c4d;
+}
+
+.menu-button {
+  position: absolute;
+  top: calc(50% + 10px);
+  left: calc(50% - 60px);
+  text-decoration: none;
+  text-align: center;
+  color: #444;
+  border-radius: 50%;
+  display: block;
+  height: 150px;
+  width: 150px;
+  line-height: 40px;
+  padding: 25px;
+  background: #dde;
+}
+
+
+.menu-button:hover {
+  background-color: #eef;
+}
+
+.title{
+  margin-top: 34%;
+}
+
+.col-md-2{
+  padding: none;
+}
+
+.circle .fa-circle:hover{
+  color: black;
+}
+
+
+#emoti:hover{
+    transition: 0.9s;
+    transform: rotateX(360deg);
+    -webkit-transform: rotateX(360deg);
+}
+
+#spin:hover{
+    transition: 0.9s;
+    transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+}
+
+.emoticon, .colors, .landscape, .words, .final{
+  display: none;
+}
+
+.home{}
+
+.sphere{
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+}
+
+.spheret{
+  height: 120px;
+  width: 120px;
+  border-radius: 100%;
+  opacity: .8;
+  display: none;
+}
+
+.green{
+  background-color: #43e34d;
+}
+
+.blue{
+  background-color: #3399ff;
+}
+
+.red{
+  background-color: #ff3030;
+}
+
+.yellow{
+  background-color: #ff9900;
+}
+
+.rotate {-moz-transform: rotate(90deg);
+         -webkit-transform:rotate(90deg); 
+         -ms-transform:rotate(90deg);
+         -o-transform:rotate(90deg);
+         }
+
+.nrotate {-moz-transform: rotate(-90deg);
+         -webkit-transform:rotate(-90deg); 
+         -ms-transform:rotate(-90deg);
+         -o-transform:rotate(-90deg);
+         }
+
+.line:hover { -moz-box-shadow: 0 2px 0 black; -webkit-box-shadow: 0 2px 0 black; box-shadow: 0 2px 0 black; } 
+
+#l, #m{}
+
+#n, #o, #p, #q{
+  display: none;
+}
+
+#glass {
+    position: relative;
+    height: 50%;
+    width: 70%;
+    background: rgba(255,255,255,.1);
+    border-radius: 0% 0% 15% 15%;
+    border: 3px solid;
+    border-top: 0;
+    border-bottom: 20px solid;
+    border-color: rgba(255,255,255,.7);
+    overflow: hidden;
+    opacity: 0;
+}
+
+#drink {
+    position: absolute;
+    top:100%; right:0; bottom:0; left:0;
+    background: linear-gradient(to bottom, orange, orangered);
+    box-shadow: inset 0 2px 1px rgba(255,69,0,.2);
+    opacity: .7;
+}
+
+
+/*HOVER EFFECT FOR COLORS*/
+@-webkit-keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+
+@keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+
+.hvr-buzz {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hvr-buzz:hover, .hvr-buzz:focus, .hvr-buzz:active {
+  -webkit-animation-name: hvr-buzz;
+  animation-name: hvr-buzz;
+  -webkit-animation-duration: 0.15s;
+  animation-duration: 0.15s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+/*END OF HOVER EFFECT FOR COLORS*/
+
+
+
+/*START OF HOVER FOR LANDSCAPE*/
+
+/* Wobble Vertical */
+@-webkit-keyframes hvr-wobble-vertical {
+  16.65% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+
+  33.3% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+
+  49.95% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+
+  66.6% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+
+  83.25% {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes hvr-wobble-vertical {
+  16.65% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+
+  33.3% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+
+  49.95% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+
+  66.6% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+
+  83.25% {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.hvr-wobble-vertical {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hvr-wobble-vertical:hover, .hvr-wobble-vertical:focus, .hvr-wobble-vertical:active {
+  -webkit-animation-name: hvr-wobble-vertical;
+  animation-name: hvr-wobble-vertical;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+/* Wobble Horizontal */
+@-webkit-keyframes hvr-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+  }
+
+  33.3% {
+    -webkit-transform: translateX(-6px);
+    transform: translateX(-6px);
+  }
+
+  49.95% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+
+  66.6% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes hvr-wobble-horizontal {
+  16.65% {
+    -webkit-transform: translateX(8px);
+    transform: translateX(8px);
+  }
+
+  33.3% {
+    -webkit-transform: translateX(-6px);
+    transform: translateX(-6px);
+  }
+
+  49.95% {
+    -webkit-transform: translateX(4px);
+    transform: translateX(4px);
+  }
+
+  66.6% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+
+  83.25% {
+    -webkit-transform: translateX(1px);
+    transform: translateX(1px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.hvr-wobble-horizontal {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hvr-wobble-horizontal:hover, .hvr-wobble-horizontal:focus, .hvr-wobble-horizontal:active {
+  -webkit-animation-name: hvr-wobble-horizontal;
+  animation-name: hvr-wobble-horizontal;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+/*END OF HOVER FOR LANDSCAPE*/
+
+#emoticon, #landscape, #words, #colors{}
+
+.yourdrink{
+  display: none;
+}
+
+#tree{
+  display: none;
+}
+
+</style>
+<html>
+<body>
+
+<div class="wrapper">
+  <div class="container home">
+     <div class="col-md-5">
+      <nav class="circular-menu">
+       <div class="circle">
+      <a class="fa fa-smile-o fa-3x" id="emoticon"></a>
+      <a class="fa fa-circle fa-1x"></a>
+      <a class="fa fa-camera fa-3x" id="landscape"></a>
+      <a class="fa fa-circle fa-1x"></a>
+      <a class="fa fa-text-width fa-3x" id="words"></a>
+      <a class="fa fa-circle fa-1x"></a>
+      <a class="fa fa-paint-brush fa-3x"  id="colors"></a>
+      <a class="fa fa-circle fa-1x"></a>
+      </div>
+      <a class="menu-button" style="background-image:url('img/shaker.png'); background-size:70%;
+       background-repeat:no-repeat; background-position:center"></a>
+      </nav>
+
+
+  </div>
+    <div class="col-md-7">
+      <div class="title" id="co"><h1> Moodologist </h1></div>
+      <div id="m"><h3 style="margin-top:-10px;">&nbsp;&nbsp;&nbsp;&nbsp; You thirsty brah? - Brosapham Lincoln </h3> </div>
+      <div id="n"><h3> Emoji </h3> </div>
+      <div id="o"><h3> Landscape </h3> </div>
+      <div id="p"><h3> Word </h3> </div>
+      <div id="q"><h3> Color </h3> </div>
+    </div>    
+  </div>
+
+
+  <div class="container emoticon" style="background-color:#dde">
+      <div class="row" style="padding-top:23%">
+        <div id="Sad"><div class="col-md-2 col-md-offset-2" id="emoti" style="margin-left:20%"><img src="img/sad.png" width="60%"></div></div>
+        <div id="Giggly"><div class="col-md-2" id="emoti"><img src="img/giggly.png" alt="Smiley face" width="60%"></div></div>
+        <div id="Happy"><div class="col-md-2" id="emoti"><img src="img/happy.png" alt="Smiley face" width="60%"></div></div>
+       <div id="Mad"> <div class="col-md-2" id="emoti"><img src="img/mad.png" alt="Smiley face" width="60%"></div></div>
+        </div>
+  </div> 
+
+
+  <div class="container landscape" align="center" style="background-color:#E5FEFE; padding-top:8%">
+    <h2 style="text-align:center; ">Choose one of the following:</h2>
+      <div class="row" style="margin-top:5%">
+          <div id="Mountains"><div class="col-md-2" style="margin-left:3%"><img class="hvr-wobble-vertical" src="img/lake.jpg" alt="Lake" height="40%" width="120%" style="border-radius:100%"></div></div>
+          <div id="Skyline"><div class="col-md-2 col-md-offset-1"><img class="hvr-wobble-horizontal" src="img/skyline.jpg" alt="Skyline at night" height="40%" width="120%" style="border-radius:100%"></div></div>
+          <div id="Island"><div class="col-md-2 col-md-offset-1"><img class="hvr-wobble-vertical" src="img/Tropical-Island.jpg" alt="Island" height="40%" width="120%" style="border-radius:100%"></div></div> 
+          <div id="Country"><div class="col-md-2 col-md-offset-1"><img class="hvr-wobble-horizontal" src="img/forest.jpg" alt="Forest" height="40%" width="120%" style="border-radius:100%"></div></div>
+  </div>
+  </div>
+
+
+
+  <div class="container words" style="background-color:#fefee3">
+    <div class="row" style="padding:5%">
+        <h3 align="center" style="font-size:3em;padding-bottom:5%">Pick a word:</h3>
+          <div id = "Simple" class="col-md-5 line"><img src="img/simple-1.png" alt="Simple" width="97%"></div>
+          <div id = "Fun" class="col-md-5 line col-md-offset-1"><img src="img/fun-1.png" alt="Fun" width=""></div>
+    </div>
+    <div class="row">
+          <div id = "Classy" class="col-md-5 line col-md-offset-1" style="top:-10%;"><img src="img/classy-1.png" alt="Classy" width=""></div>
+          <div id = "Spicy"class="col-md-5 line" style="float:left;"><img src="img/spicy-1.png" alt="Spicy" width=""></div>
+    </div>
+  </div>
+
+
+    <div class="container colors">
+      <h3 style="text-align:center; padding-top:8%; font-size:3em;">Pick a color:</h3>
+      <div class="row" style="padding-left:23%; padding-right:20%; padding-top: 10%;">
+        <div class="col-md-3">
+          <div class="hvr-buzz"><div id ="Green" class="sphere green"></div></div>
+        </div>
+        <div class="col-md-3">
+          <div class="hvr-buzz"><div id = "Blue" class="sphere blue"></div></div>
+        </div>
+        <div class="col-md-3">
+         <div class="hvr-buzz"><div id = "Orange" class="sphere yellow"></div></div>
+        </div>
+        <div class="col-md-3">
+          <div class="hvr-buzz"><div  id = "Red" class="sphere red"></div></div>
+        </div>
+        </div>
+      </div>
+
+
+      <div class="container final" style="background-color:#e5e5e5; padding-top:13%">
+      <div class="row">
+      <div class="col-md-7" align="center"><h1><span class="yourdrink"></span></h1></div>
+      <div class="col-md-4" style="padding-left:3%"><div id="glass"> <div id="drink"></div></div></div>
+      <!--<div class="col-md-4"><h3 id="tree"> For more information about this cocktail, please visit....</div>-->
+    </div>
+    <div clas="row" style="padding-top:5%;">
+    <div class="col-md-4 col-md-offset-1" id="reload" ><div class="spheret" style="background-color:black; color:white; padding-top:7%;" align="center" ><h4>Back to Beginning</h4></div></div>
+    <div class="col-md-4"><div class="spheret" style="background-color:black; color:white; padding-top:7%" align="center" id="poweranother" ><h4>Pour Me Another</h4></div></div> 
+  </div>
+      </div>
+
+
+
+</div> 
+
+
+</body>
+
+<script src="js/java.js"></script>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+
+document.querySelector('.menu-button').onmouseover = function(e) {
+   e.preventDefault(); document.querySelector('.circle').classList.toggle('open');
+}
+
+  var items = document.querySelectorAll('.circle a');
+  for(var i = 0, l = items.length; i < l; i++) {
+  items[i].style.left = (50 - 35*Math.cos(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
+  items[i].style.top = (50 + 35*Math.sin(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
+}
+
+$('#reload').click(function() {
+    location.reload();
+});
+
+
+$('#Happy, #Giggly, #Sad, #Mad').click(function(){
+  $('.emoticon').fadeOut('fast');
+  $('body').css({'background-color':'#e5e5e5'});
+  $('.final').show('slow');
+  $('#glass').delay(600).animate({'opacity':'1', 'left':'20%'}, 500, (function(){
+      $('.yourdrink').animate({'left':'45%'}).show(400);
+      $('.spheret').show(800);
+  }));
+  startLoading();
+});
+
+$('#Mountains, #Skyline, #Island, #Country').click(function(){
+  $('.landscape').fadeOut('fast');
+  $('body').css({'background-color':'#e5e5e5'});
+  $('.final').show('slow');
+  $('#glass').delay(600).animate({'opacity':'1', 'left':'20%'}, 500, (function(){
+      $('.yourdrink').animate({'left':'45%'}).show(400);
+      $('.spheret').show(800);
+  }));
+  startLoading();
+});
+
+$('#Green, #Blue, #Orange, #Red').click(function(){
+  $('.colors').fadeOut('fast');
+  $('body').css({'background-color':'#e5e5e5'});
+  $('.final').show('slow');
+  $('#glass').delay(600).animate({'opacity':'1', 'left':'20%'}, 500, (function(){
+      $('.yourdrink').animate({'left':'45%'}).show(400);
+      $('.spheret').show(800);
+  }));
+  startLoading();
+});
+
+$('#Simple, #Fun, #Classy, #Spicy').click(function(){
+  $('.words').fadeOut('fast');
+  $('body').css({'background-color':'#e5e5e5'});
+  $('.final').show('slow');
+  $('#glass').delay(600).animate({'opacity':'1', 'left':'20%'}, 500, (function(){
+      $('.yourdrink').animate({'left':'45%'}).show(400);
+      $('.spheret').show(800);
+  }));
+  startLoading();
+});
+
+$('#emoticon').click(function(){
+  $('.home').fadeOut('fast');
+  $('.emoticon').show('slow');
+});
+
+$('#landscape').click(function(){
+  $('.home').fadeOut('fast');
+  $('.landscape').show(1000);
+});
+
+$('#words').click(function(){
+  $('.home').fadeOut('fast');
+  $('.words').show('slow');
+});
+
+$('#colors').click(function(){
+  $('.home').fadeOut('fast');
+  $('.colors').show('slow');
+});
+
+$('#emoticon').hover(function(){
+  $('#m').hide();
+  $('#n').show();
+}, function(){
+  $('#n').hide();
+  $('#m').show();
+});
+
+$('#landscape').hover(function(){
+  $('#m').hide();
+  $('#o').show();
+}, function(){
+  $('#o').hide();
+  $('#m').show();
+});
+
+$('#words').hover(function(){
+  $('#m').hide();
+  $('#p').show();
+}, function(){
+  $('#p').hide();
+  $('#m').show();
+});
+
+
+$('#colors').hover(function(){
+  $('#m').hide();
+  $('#q').show();
+}, function(){
+  $('#q').hide();
+  $('#m').show();
+});
+
+
+var worker = null;
+var loaded = 0;
+
+function increment() {
+    $('#counter').html(loaded+'%');
+    $('#drink').css('top', (100-loaded*.9)+'%');
+    if(loaded==100) {
+        loaded = 0;
+        stopLoading();
+       // setTimeout(startLoading, 1000);
+    }
+    else loaded++;    
+}
+
+function startLoading() {
+    worker = setInterval(increment, 15);
+}
+function stopLoading() {
+    clearInterval(worker);
+}
+
+$('#poweranother').click(function() {
+    startLoading();
+});
+
+function fadeDivIn(){
+    $("#co").animate({'color': "#FFFF00" }, 1000, function(){fadeDiv2();});
+}
+function fadeDiv2(){
+    $("#co").animate({'color': "#008F59" }, 1000, function(){fadeDiv3();});
+}
+
+function fadeDiv3(){
+    $("#co").animate({'color': "#92771B2" }, 1000, function(){fadeDiv4();});
+}
+
+function fadeDiv4(){
+    $("#co").animate({'color': "#6E3795" }, 1000, function(){fadeDiv5();});
+}
+
+function fadeDiv5(){
+    $("#co").animate({'color': "#FF0000" }, 1000, function(){fadeDiv6();});
+}
+function fadeDiv6(){
+    $("#co").animate({'color': "#FF9201" }, 1000, function(){fadeDivIn();});
+}
+
+$(document).ready(function(){
+    fadeDivIn();
+})
+
+</script>
+
+ </html>

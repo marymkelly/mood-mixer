@@ -272,83 +272,122 @@ var madDrinks = { "Mad" : [
 /*End of Database*/
 
 /*Button functions*/
-var EMJ;
-var LS;
-var CLR;
-var WRD;
+var tv;
 
 $("#Happy").onclick=function(){
+	tv = "Happy";
 	var position = Math.floor((Math.random() * happyDrinks.Happy.length - 1 ) + 0);
 	document.getElementsByClassName("yourdrink")[0].innerHTML=happyDrinks.Happy[position].name;
 };
 
-$("#Mad").onclick=function(){
+$("#Giggly").onclick=function(){
+	tv = "Giggly";
 	var position = Math.floor((Math.random() * gigglyDrinks.Giggly.length - 1 ) + 0);
 	document.getElementsByClassName("yourdrink")[0].innerHTML=gigglyDrinks.Giggly[position].name;
 };
 $("#Sad").onclick=function(){
+	tv = "Sad";
 	var position = Math.floor((Math.random() * sadDrinks.Sad.length - 1 ) + 0);
 	document.getElementsByClassName("yourdrink")[0].innerHTML=sadDrinks.Sad[position].name;
 };
-$("#Giggly").onclick=function(){
+$("#Mad").onclick=function(){
+	tv = "Mad";
 	var position = Math.floor((Math.random() * madDrinks.Mad.length - 1 ) + 0);
 	document.getElementsByClassName("yourdrink")[0].innerHTML=madDrinks.Mad[position].name;
 };
 
 
 $("#Mountains").onclick=function(){
+	tv = "Mountains";
 	var position = Math.floor((Math.random() * mountainDrinks.Mountains.length - 1 ) + 0);
 	document.getElementsByClassName("yourdrink")[0].innerHTML=mountainDrinks.Mountains[position].name;
 };
 $("#Island").onclick=function(){
+	tv = "Island";
 	var position = Math.floor((Math.random() * islandDrinks.Island.length - 1 ) + 0);
 	document.getElementsByClassName("yourdrink")[0].innerHTML=islandDrinks.Island[position].name;	
 };
 $("#Skyline").onclick=function(){
+	tv = "Skyline";
 	var position = Math.floor((Math.random() * skylineDrinks.Skyline.length - 1 ) + 0);
 	document.getElementsByClassName("yourdrink")[0].innerHTML=skylineDrinks.Skyline[position].name;
 };
 $("#Country").onclick=function(){
+	tv = "Country";
 	var position = Math.floor((Math.random() * countryDrinks.Country.length - 1 ) + 0);
 	document.getElementsByClassName("yourdrink")[0].innerHTML=countryDrinks.Country[position].name;	
 };
 
 $("#Red").onclick=function(){
+	tv = "Red";
 	var position = Math.floor((Math.random() * redDrinks.Red.length - 1 ) + 0);
 	document.getElementsByClassName("yourdrink")[0].innerHTML=redDrinks.Red[position].name;	
 };
 $("#Blue").onclick=function(){
+	tv = "Blue";
 	var position = Math.floor((Math.random() * blueDrinks.Blue.length - 1 ) + 0);
 	document.getElementsByClassName("yourdrink")[0].innerHTML=blueDrinks.Blue[position].name;
 };
 
 $("#Green").onclick=function(){
+	tv = "Green";
 	var position = Math.floor((Math.random() * greenDrinks.Green.length - 1 ) + 0);
 	document.getElementsByClassName("yourdrink")[0].innerHTML=greenDrinks.Green[position].name;
 };
 
 $("#Orange").onclick=function(){
+	tv = "Orange";
 	var position = Math.floor((Math.random() * orangeDrinks.Orange.length - 1 ) + 0);
 	document.getElementsByClassName("yourdrink")[0].innerHTML=orangeDrinks.Orange[position].name;	
 };
 
 $("#Fun").onclick=function(){
+	tv = "Fun";
 	var position = Math.floor((Math.random() * funDrinks.Fun.length - 1 ) + 0);
 	document.getElementsByClassName("yourdrink")[0].innerHTML=funDrinks.Fun[position].name;	
 };
 $("#Spicy").onclick=function(){
+	tv = "Spicy";
 	var position = Math.floor((Math.random() * spicyDrinks.Spicy.length - 1 ) + 0);
 	document.getElementsByClassName("yourdrink")[0].innerHTML=spicyDrinks.Spicy[position].name;	
 };
 $("#Classy").onclick=function(){
+	tv = "Classy";
 	var position = Math.floor((Math.random() * classyDrinks.Classy.length - 1 ) + 0);
 	document.getElementsByClassName("yourdrink")[0].innerHTML=classyDrinks.Classy[position].name;	
 };
 $("#Simple").onclick=function(){
+	tv = "Simple";
 	var position = Math.floor((Math.random() * simpleDrinks.Simple.length - 1 ) + 0);
 	document.getElementsByClassName("yourdrink")[0].innerHTML=simpleDrinks.Simple[position].name;	
 };
 
+$("#poweranother").onclick=function(){
+	var position = Math.floor((Math.random() * simpleDrinks.Simple.length - 1 ) + 0);
+
+	if (tv == "Mountains"){
+		document.getElementsByClassName("yourdrink")[0].innerHTML=mountainDrinks.Mountains[position].name;
+	}
+
+	else if (tv == "Simple"){document.getElementsByClassName("yourdrink")[0].innerHTML=simpleDrinks.Simple[position].name;}
+	else if (tv == "Classy"){document.getElementsByClassName("yourdrink")[0].innerHTML=classyDrinks.Classy[position].name;}
+	else if (tv == "Spicy"){document.getElementsByClassName("yourdrink")[0].innerHTML=spicyDrinks.Spicy[position].name;	}
+	else if (tv == "Fun"){document.getElementsByClassName("yourdrink")[0].innerHTML=funDrinks.Fun[position].name;	}
+	else if (tv == "Orange"){document.getElementsByClassName("yourdrink")[0].innerHTML=orangeDrinks.Orange[position].name;}
+	else if (tv == "Green"){document.getElementsByClassName("yourdrink")[0].innerHTML=greenDrinks.Green[position].name;}
+	else if (tv == "Blue"){document.getElementsByClassName("yourdrink")[0].innerHTML=blueDrinks.Blue[position].name;}
+	else if (tv == "Red"){document.getElementsByClassName("yourdrink")[0].innerHTML=redDrinks.Red[position].name;	}
+	else if (tv == "Country"){document.getElementsByClassName("yourdrink")[0].innerHTML=countryDrinks.Country[position].name;}
+	else if (tv == "Skyline"){document.getElementsByClassName("yourdrink")[0].innerHTML=skylineDrinks.Skyline[position].name;}
+	else if (tv == "Island") {document.getElementsByClassName("yourdrink")[0].innerHTML=islandDrinks.Island[position].name;}
+	else if (tv == "Mad"){document.getElementsByClassName("yourdrink")[0].innerHTML=madDrinks.Mad[position].name;}
+	else if (tv == "Sad"){document.getElementsByClassName("yourdrink")[0].innerHTML=sadDrinks.Sad[position].name;}
+	else if (tv == "Giggly"){document.getElementsByClassName("yourdrink")[0].innerHTML=gigglyDrinks.Giggly[position].name;}
+	else if (tv == "Happy"){document.getElementsByClassName("yourdrink")[0].innerHTML=happyDrinks.Happy[position].name;}
+
+	else {}
+
+};
 
 
 

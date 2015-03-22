@@ -139,6 +139,14 @@ svg{
   border-radius: 100%;
 }
 
+.spheret{
+  height: 120px;
+  width: 120px;
+  border-radius: 100%;
+  opacity: .8;
+  display: none;
+}
+
 .green{
   background-color: #43e34d;
 }
@@ -186,6 +194,7 @@ svg{
     border-bottom: 20px solid;
     border-color: rgba(255,255,255,.7);
     overflow: hidden;
+    opacity: 0;
 }
 
 #drink {
@@ -426,6 +435,15 @@ svg{
 
 
 #emoticon, #landscape, #words, #colors{}
+
+.yourdrink{
+  display: none;
+}
+
+#tree{
+  display: none;
+}
+
 </style>
 
   <html>
@@ -526,13 +544,13 @@ svg{
 
       <div class="container final" style="background-color:#e5e5e5; padding-top:13%">
       <div class="row">
-      <div class="col-md-4" align="center"><h1><span class="yourdrink"></span></h1></div>
+      <div class="col-md-7" align="center"><h1><span class="yourdrink"></span></h1></div>
       <div class="col-md-4" style="padding-left:3%"><div id="glass"> <div id="drink"></div></div></div>
-      <div class="col-md-4"><h3> For more information about this cocktail, please visit....</div>
+      <!--<div class="col-md-4"><h3 id="tree"> For more information about this cocktail, please visit....</div>-->
     </div>
     <div clas="row" style="padding-top:5%;">
-    <div class="col-md-4"></div> 
-    <div class="col-md-4" id="poweranother" style="padding-left:5%;" ><h3>Pour Me Another</h3></div></div>
+    <div class="col-md-4 col-md-offset-1" id="poweranother" ><div class="spheret" style="background-color:black; color:white; padding-top:7%;" align="center" ><h4>Pour Me Another</h4></div></div>
+    <div class="col-md-4"><div class="spheret" style="background-color:black; color:white; padding-top:7%" align="center" id="reload" ><h4>Back to Beginning</h4></div></div> 
   </div>
       </div>
 
@@ -559,27 +577,47 @@ document.querySelector('.menu-button').onmouseover = function(e) {
   items[i].style.top = (50 + 35*Math.sin(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
 }
 
+$('#reload').click(function() {
+    location.reload();
+});
+
 $('#Happy, #Giggly, #Sad, #Mad').click(function(){
   $('.emoticon').fadeOut('fast');
   $('.final').show('slow');
+  $('#glass').delay(1000).animate({'opacity':'1', 'left':'20%'}, 500, (function(){
+      $('.yourdrink').animate({'left':'45%'}).show(400);
+      $('.spheret').show(800);
+  }));
   startLoading();
 });
 
 $('#Mountains, #Skyline, #Island, #Country').click(function(){
   $('.landscape').fadeOut('fast');
   $('.final').show('slow');
+  $('#glass').delay(1000).animate({'opacity':'1', 'left':'20%'}, 500, (function(){
+      $('.yourdrink').animate({'left':'45%'}).show(400);
+      $('.spheret').show(800);
+  }));
   startLoading();
 });
 
 $('#Green, #Blue, #Orange, #Red').click(function(){
   $('.colors').fadeOut('fast');
   $('.final').show('slow');
+  $('#glass').delay(1000).animate({'opacity':'1', 'left':'20%'}, 500, (function(){
+      $('.yourdrink').animate({'left':'45%'}).show(400);
+      $('.spheret').show(800);
+  }));
   startLoading();
 });
 
 $('#Simple, #Fun, #Classy, #Spicy').click(function(){
   $('.words').fadeOut('fast');
   $('.final').show('slow');
+  $('#glass').delay(1000).animate({'opacity':'1', 'left':'20%'}, 500, (function(){
+      $('.yourdrink').animate({'left':'45%'}).show(400);
+      $('.spheret').show(800);
+  }));
   startLoading();
 });
 
@@ -652,7 +690,7 @@ function increment() {
 }
 
 function startLoading() {
-    worker = setInterval(increment, 90);
+    worker = setInterval(increment, 50);
 }
 function stopLoading() {
     clearInterval(worker);

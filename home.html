@@ -9,6 +9,7 @@
 
 body{
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .test{
@@ -120,7 +121,7 @@ svg{
     -webkit-transform: rotateX(360deg);
 }
 
-.emoticon, .colors, .landscape, .words{
+.emoticon, .colors, .landscape, .words, .final{
   display: none;
 }
 
@@ -269,11 +270,6 @@ svg{
   </div>
 
 
-
-
-
-
-
     <div class="container colors">
       <div class="row" style="padding-left:8%; padding-top: 20%;">
         <div class="col-md-3">
@@ -321,6 +317,30 @@ document.querySelector('.menu-button').onmouseover = function(e) {
   items[i].style.left = (50 - 35*Math.cos(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
   items[i].style.top = (50 + 35*Math.sin(-0.5 * Math.PI - 2*(1/l)*i*Math.PI)).toFixed(4) + "%";
 }
+
+$('#Happy, #Giggly, #Sad, #Mad').click(function(){
+  $('.emoticon').fadeOut('fast');
+  $('.final').show('slow');
+  startLoading();
+});
+
+$('#Mountains, #Skyline, #Island, #Country').click(function(){
+  $('.landscape').fadeOut('fast');
+  $('.final').show('slow');
+  startLoading();
+});
+
+/*$('#Happy, #Giggly, #Sad, #Mad').click(function(){
+  $('.emoticon').fadeOut('fast');
+  $('.final').show('slow');
+  startLoading();
+});
+
+/*$('#Happy, #Giggly, #Sad, #Mad').click(function(){
+  $('.emoticon').fadeOut('fast');
+  $('.final').show('slow');
+  startLoading();
+});*/
 
 $('#emoticon').click(function(){
   $('.home').fadeOut('fast');
@@ -375,6 +395,8 @@ $('#colors').hover(function(){
   $('#m').show();
 });
 
+
+
 var worker = null;
 var loaded = 0;
 
@@ -396,7 +418,8 @@ function stopLoading() {
     clearInterval(worker);
 }
 
-startLoading();
+
+
 
 
 
